@@ -16,14 +16,14 @@ func _physics_process(delta):
 
 func get_input():
 	var turn = 0
-	if Input.is_action_pressed("steer_right"):
+	if Input.is_key_pressed(KEY_RIGHT):
 		turn += 1
-	if Input.is_action_pressed("steer_left"):
+	if Input.is_key_pressed(KEY_LEFT):
 		turn -= 1
 
 	steer_direction = turn * deg2rad(steering_angle)
 	velocity = Vector2.ZERO
-	if Input.is_action_pressed("accelerate"):
+	if Input.is_key_pressed(KEY_UP):
 		velocity = transform.x * 500
 
 

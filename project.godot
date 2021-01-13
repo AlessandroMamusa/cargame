@@ -19,6 +19,10 @@ config/name="cargame"
 run/main_scene="res://testzone.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/height=768
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

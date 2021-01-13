@@ -8,6 +8,8 @@ var engine_power = 800
 
 var acceleration = Vector2.ZERO
 var velocity = Vector2.ZERO
+var bracking = -450
+var max_speed_reverse = 250
 var steer_direction
 
 var friction = -0.9
@@ -34,6 +36,8 @@ func get_input():
 
 	if Input.is_key_pressed(KEY_UP):
 		acceleration = transform.x * engine_power
+	if Input.is_key_pressed(KEY_DOWN):
+		acceleration = transform.x * bracking
 
 
 func calculate_steering(delta):
@@ -44,7 +48,11 @@ func calculate_steering(delta):
 	front_wheel += velocity.rotated(steer_direction) * delta
 
 	var new_heading = (front_wheel - rear_wheel).normalized()
-	velocity = new_heading * velocity.length()
+	var d = new_heading.dot(velocity.normalized())
+	if d > 0:
+		velocity = new_heading * velocity.length()
+	if d < 0:
+		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
 	rotation = new_heading.angle()
 
 

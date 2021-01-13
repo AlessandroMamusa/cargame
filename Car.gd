@@ -49,9 +49,9 @@ func calculate_steering(delta):
 
 	var new_heading = (front_wheel - rear_wheel).normalized()
 	var d = new_heading.dot(velocity.normalized())
-	if d > 0:
+	if d > 0: # go forward
 		velocity = new_heading * velocity.length()
-	if d < 0:
+	if d < 0: # slow donw / reverse
 		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
 	rotation = new_heading.angle()
 

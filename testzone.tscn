@@ -1,25 +1,73 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/tiles/road_asphalt01.png" type="Texture" id=1]
+[ext_resource path="res://assets/Tiles/vector_roads.png" type="Texture" id=1]
 [ext_resource path="res://Car.tscn" type="PackedScene" id=2]
+
+[sub_resource type="TileSet" id=1]
+3/name = "vector_roads.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 74, 0, 64, 64 )
+3/tile_mode = 2
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 64, 64 )
+3/autotile/spacing = 10
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "vector_roads.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 1322, 1100 )
+4/tile_mode = 2
+4/autotile/icon_coordinate = Vector2( 0, 0 )
+4/autotile/tile_size = Vector2( 64, 64 )
+4/autotile/spacing = 10
+4/autotile/occluder_map = [  ]
+4/autotile/navpoly_map = [  ]
+4/autotile/priority_map = [  ]
+4/autotile/z_index_map = [  ]
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
 
 [node name="testzone" type="Node2D"]
 
 [node name="road_asphalt01" type="Sprite" parent="."]
 position = Vector2( 288, 380 )
-texture = ExtResource( 1 )
 
 [node name="road_asphalt01" type="Sprite" parent="road_asphalt01"]
 position = Vector2( 200, -7 )
-texture = ExtResource( 1 )
 
 [node name="road_asphalt02" type="Sprite" parent="road_asphalt01"]
 position = Vector2( 398, -9 )
-texture = ExtResource( 1 )
 
 [node name="road_asphalt03" type="Sprite" parent="road_asphalt01"]
 position = Vector2( 584, -10 )
-texture = ExtResource( 1 )
 
 [node name="Car" parent="." instance=ExtResource( 2 )]
 position = Vector2( 535, 527 )
+z_index = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.737094, 0.723874 )
+tile_set = SubResource( 1 )
+cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 327683, 4, 7, 327684, 4, 8, 327685, 4, 3, 327686, 4, 3, 327687, 4, 3, 327688, 4, 3, 327689, 4, 262158, 327690, 4, 3, 327691, 4, 3, 327692, 4, 3, 327693, 4, 3, 327694, 4, 3, 327695, 4, 3, 327696, 4, 3, 327697, 4, 3, 327698, 4, 3, 327699, 4, 3, 327700, 4, 3, 327701, 4, 3, 327702, 4, 3, 327703, 4, 3, 327704, 4, 3, 327705, 4, 3, 327706, 4, 3, 327707, 4, 3, 327708, 4, 3, 327709, 4, 3, 327710, 4, 9, 327711, 4, 10, 393219, 4, 65543, 393220, 4, 65544, 393221, 4, 131075, 393222, 4, 131075, 393223, 4, 131075, 393224, 4, 131075, 393225, 4, 262160, 393226, 4, 131075, 393227, 4, 131075, 393228, 4, 131075, 393229, 4, 131075, 393230, 4, 131075, 393231, 4, 131075, 393232, 4, 131075, 393233, 4, 131075, 393234, 4, 131075, 393235, 4, 131075, 393236, 4, 131075, 393237, 4, 131075, 393238, 4, 131075, 393239, 4, 131075, 393240, 4, 131075, 393241, 4, 131075, 393242, 4, 131075, 393243, 4, 131075, 393244, 4, 131075, 393245, 4, 131075, 393246, 4, 65545, 393247, 4, 65546, 458755, 4, 65538, 458756, 4, 65540, 458782, 4, 65538, 458783, 4, 65540, 524291, 4, 65538, 524292, 4, 65540, 524318, 4, 65538, 524319, 4, 65540, 589827, 4, 65538, 589828, 4, 65540, 589854, 4, 65538, 589855, 4, 65540, 655363, 4, 65538, 655364, 4, 65540, 655390, 4, 65538, 655391, 4, 65540, 720899, 4, 65538, 720900, 4, 65540, 720926, 4, 65538, 720927, 4, 65540, 786435, 4, 65538, 786436, 4, 65540, 786462, 4, 65538, 786463, 4, 65540, 851971, 4, 65538, 851972, 4, 65540, 851998, 4, 65538, 851999, 4, 65540, 917507, 4, 65538, 917508, 4, 65540, 917534, 4, 65538, 917535, 4, 65540, 983043, 4, 65538, 983044, 4, 65540, 983070, 4, 65538, 983071, 4, 65540, 1048579, 4, 65538, 1048580, 4, 65540, 1048606, 4, 65538, 1048607, 4, 65540, 1114115, 4, 65538, 1114116, 4, 65540, 1114142, 4, 65538, 1114143, 4, 65540, 1179651, 4, 65538, 1179652, 4, 65540, 1179678, 4, 65538, 1179679, 4, 65540, 1245187, 4, 131079, 1245188, 4, 131080, 1245189, 4, 3, 1245190, 4, 3, 1245191, 4, 3, 1245192, 4, 3, 1245193, 4, 3, 1245194, 4, 3, 1245195, 4, 3, 1245196, 4, 3, 1245197, 4, 3, 1245198, 4, 3, 1245199, 4, 3, 1245200, 4, 3, 1245201, 4, 3, 1245202, 4, 3, 1245203, 4, 3, 1245204, 4, 3, 1245205, 4, 3, 1245206, 4, 3, 1245207, 4, 3, 1245208, 4, 3, 1245209, 4, 3, 1245210, 4, 3, 1245211, 4, 3, 1245212, 4, 3, 1245213, 4, 3, 1245214, 4, 131081, 1245215, 4, 131082, 1310723, 4, 196615, 1310724, 4, 196616, 1310725, 4, 131075, 1310726, 4, 131075, 1310727, 4, 131075, 1310728, 4, 131075, 1310729, 4, 131075, 1310730, 4, 131075, 1310731, 4, 131075, 1310732, 4, 131075, 1310733, 4, 131075, 1310734, 4, 131075, 1310735, 4, 131075, 1310736, 4, 131075, 1310737, 4, 131075, 1310738, 4, 131075, 1310739, 4, 131075, 1310740, 4, 131075, 1310741, 4, 131075, 1310742, 4, 131075, 1310743, 4, 131075, 1310744, 4, 131075, 1310745, 4, 131075, 1310746, 4, 131075, 1310747, 4, 131075, 1310748, 4, 131075, 1310749, 4, 131075, 1310750, 4, 196617, 1310751, 4, 196618 )
